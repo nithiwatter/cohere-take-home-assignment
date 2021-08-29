@@ -124,6 +124,13 @@ export default function MainContainer() {
     let maxDebitIndex = sortedNetAmounts.length - 1;
 
     while (maxCreditIndex <= maxDebitIndex) {
+      if (
+        sortedNetAmounts[maxCreditIndex].netAmount === 0 ||
+        sortedNetAmounts[maxDebitIndex].netAmount === 0
+      ) {
+        break;
+      }
+
       const amountToBePaid = Math.min(
         sortedNetAmounts[maxCreditIndex].netAmount,
         -sortedNetAmounts[maxDebitIndex].netAmount
@@ -148,13 +155,6 @@ export default function MainContainer() {
 
       if (sortedNetAmounts[maxDebitIndex].netAmount === 0) {
         maxDebitIndex -= 1;
-      }
-
-      if (
-        sortedNetAmounts[maxCreditIndex].netAmount === 0 ||
-        sortedNetAmounts[maxDebitIndex].netAmount === 0
-      ) {
-        break;
       }
     }
 
