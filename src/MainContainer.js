@@ -215,7 +215,11 @@ export default function MainContainer() {
             </Button>
           </Box>
           <Box ml={2}>
-            <Button variant="contained" onClick={handleClickOpen}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleClickOpen}
+            >
               Add a new person
             </Button>
           </Box>
@@ -237,7 +241,11 @@ export default function MainContainer() {
         )}
         <Box display="flex" alignItems="center" justifyContent="center" m={2}>
           <div>
-            <Button variant="contained" onClick={handleProcessResults}>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={handleProcessResults}
+            >
               Process results
             </Button>
           </div>
